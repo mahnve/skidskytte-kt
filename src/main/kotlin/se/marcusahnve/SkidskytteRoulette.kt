@@ -1,7 +1,5 @@
 package se.marcusahnve
 
-import dev.forkhandles.partial.`$1`
-import dev.forkhandles.partial.partial
 import org.http4k.core.HttpHandler
 import org.http4k.core.Method.GET
 import org.http4k.core.Response

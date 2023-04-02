@@ -16,7 +16,7 @@ plugins {
 jib {
 	container.mainClass = "se.marcusahnve.SkidskytteRouletteKt"
 	from.image = "amazoncorretto:17.0.6"
-	to.image = 'mahnve/skidskytteroulette'
+	to.image = 'ghcr.io/mahnve/skidskytteroulette'
 	container.ports = ["9000"]
 }
 
@@ -51,7 +51,7 @@ dependencies {
 	testImplementation "io.kotest:kotest-runner-junit5-jvm:${kotestVersion}"
 	testImplementation "io.kotest:kotest-assertions-core:${kotestVersion}"
 	testImplementation "io.kotest:kotest-property:${kotestVersion}"
-	testImplementation("io.kotest:kotest-framework-engine-jvm:$version")
+	testImplementation "io.kotest:kotest-framework-engine-jvm:$kotestVersion"
 
 }
 
