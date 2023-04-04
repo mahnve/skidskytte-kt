@@ -6,11 +6,19 @@ buildscript {
 
 	dependencies {
 		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}"
+		classpath "io.qameta.allure:allure-gradle:2.3"
 	}
 }
 
 plugins {
 	id 'com.google.cloud.tools.jib' version '3.3.1'
+	id 'io.qameta.allure' version '2.11.2'
+}
+
+allure {
+	version = '2.21.0'
+	autoconfigure = true
+	downloadLink = "https://github.com/allure-framework/allure2/releases/download/2.21.0/allure-2.21.0.zip"
 }
 
 jib {
@@ -52,6 +60,6 @@ dependencies {
 	testImplementation "io.kotest:kotest-assertions-core:${kotestVersion}"
 	testImplementation "io.kotest:kotest-property:${kotestVersion}"
 	testImplementation "io.kotest:kotest-framework-engine-jvm:$kotestVersion"
-
+	testImplementation "io.kotest.extensions:kotest-extensions-allure:1.2.0"
 }
 
